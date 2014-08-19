@@ -131,4 +131,9 @@ task "console" do
   exec "irb -r./config/environment"
 end
 
+desc 'Start IRB with environment but no return echo'
+task "shh" do
+  exec "irb -r./config/environment --noecho"
+end
+
 task :default  => :spec
