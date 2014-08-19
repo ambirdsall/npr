@@ -1,1 +1,10 @@
-<%= "oh hai" %>
+
+
+<% response = HTTParty.get("http://api.npr.org/stations?city=San+Francisco&state=California&apiKey=#{API_KEY}") %>
+<ul>
+<% response["stations"]["station"].each do |station| %>
+  <li>
+    <%="#{station["callLetters"]} #{station["band"]}, #{station["marketCity"]}: Station Id: #{station["orgId"]}, strength: #{station["signal"]["strength"]}" %>
+  </li>
+  <% end %>
+</ul>
