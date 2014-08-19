@@ -43,3 +43,10 @@ Dir[APP_ROOT.join('app', 'helpers', '*.rb')].each { |file| require file }
 
 # Set up the database and models
 require APP_ROOT.join('config', 'database')
+
+# NPR gem setup
+NPR.configure do |config|
+  config.apiKey         = "MDE2MTg4MTQzMDE0MDgyNjAyNDNhZTA4Yw001"
+  config.sort           = "date descending"
+  config.requiredAssets = "text"
+end
