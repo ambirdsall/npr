@@ -15,7 +15,7 @@ gem 'rake'
 
 gem 'shotgun'
 gem 'thin'
-gem 'npr'
+gem 'httparty'
 
 group :test do
   gem 'shoulda-matchers'
