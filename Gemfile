@@ -14,7 +14,7 @@ gem 'activerecord', '~>4.1'
 gem 'rake'
 
 gem 'shotgun'
-
+gem 'thin'
 gem 'npr'
 
 group :test do
