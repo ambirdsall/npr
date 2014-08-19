@@ -1,10 +1,15 @@
+<% user_city = City.new("San Francisco", "California") %>
 
-
-<% response = HTTParty.get("http://api.npr.org/stations?city=San+Francisco&state=California&apiKey=#{API_KEY}") %>
-<ul>
+<% response = HTTParty.get("http://api.npr.org/stations", query: {city: user_city.city, state: user_city.state, apiKey: API_KEY}) %>
 <% response["stations"]["station"].each do |station| %>
-  <li>
+  <!-- <li>
     <%="#{station["callLetters"]} #{station["band"]}, #{station["marketCity"]}: Station Id: #{station["orgId"]}, strength: #{station["signal"]["strength"]}" %>
-  </li>
+  </li> -->
+  <% user_city.add_station(Station.new(station["callLetters"], station["orgId"])) %>
+  <% end %>
+  <p>awwwwwwwwwwwwww shit</p>
+<ul>
+  <% user_city.stations.each do |s| %>
+    <li><%= s.name %></li>
   <% end %>
 </ul>
