@@ -1,3 +1,3 @@
 get '/' do
-  "hello, all things considered"
+  erb :index
 end
