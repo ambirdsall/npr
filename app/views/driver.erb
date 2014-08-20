@@ -4,7 +4,7 @@
     <li><p><%= s.name %>: </p>
     	<ul>
     	<% s.stories.each do |story| %>
-    		<li><%= Odyssey.flesch_kincaid_gl(story.text) %></li>
+    		<li><%= story.grade_level %></li>
 		<% end %>
     	</ul>
     </li>

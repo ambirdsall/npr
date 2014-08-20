@@ -16,7 +16,7 @@ gem 'rake'
 gem 'shotgun'
 gem 'thin'
 gem 'httparty'
-gem 'odyssey'
+gem 'lingua'
 
 group :test do
   gem 'shoulda-matchers'
