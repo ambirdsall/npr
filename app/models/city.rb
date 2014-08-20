@@ -1,5 +1,5 @@
 class City
-  
+
   attr_reader :city, :state, :stations
   def initialize(city, state)
     @city = city

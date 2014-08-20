@@ -1,6 +1,8 @@
 class Story
-  def initialize
-    @text = ""
-    @grade_level = 0
+  attr_reader :text
+  
+  def initialize text
+    @text = text
+    @grade_level = nil
   end
 end

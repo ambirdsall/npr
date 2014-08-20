@@ -1,6 +1,12 @@
 <h3>NPR Stations Around <%= "#{@user_city.city}, #{@user_city.state}" %>:</h3>
 <ul>
   <% @user_city.stations.each do |s| %>
-    <li><%= s.name %></li>
+    <li><p><%= s.name %>: </p>
+    	<ul>
+    	<% s.stories.each do |story| %>
+    		<li><%= Odyssey.flesch_kincaid_gl(story.text) %></li>
+		<% end %>
+    	</ul>
+    </li>
   <% end %>
 </ul>
