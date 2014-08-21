@@ -1,5 +1,3 @@
-
-
 class Station
   attr_reader :name, :orgId, :stories
   def initialize(name, orgId)
@@ -14,9 +12,8 @@ class Station
   end
 
   def add_stories story_hash
-    if story_hash["list"]["story"]# && story_hash["list"]["story"][0] && story_hash["list"]["story"][0]["paragraph"]#["$text"]
+    if story_hash["list"]["story"]
       story_hash["list"]["story"].each do |story|
-        # p story["text"].keys
         add_one_story(story)
       end
     end
