@@ -31,4 +31,20 @@ class Station
     end
     @stories << Story.new(text_string[0..-27]) if has_text
   end
+
+  def find_grades
+    grade_levels = []
+    @stories.each do |story|
+      grade_levels << story.grade_level
+    end
+    grade_levels
+  end
+
+  def find_word_counts
+    word_counts = []
+    @stories.each do |story|
+      word_counts << story.word_count
+    end
+    word_counts
+  end
 end
