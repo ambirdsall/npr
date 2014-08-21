@@ -1,4 +1,4 @@
-var graphThisSucker = function(stationName, stationGrades, chartDiv) {
+var graphGrades = function(stationName, stationGrades, chartDiv) {
   polyjs.chart({
       layer: {
           data: stationGrades,
@@ -43,7 +43,7 @@ var graphStations = function() {
         gradeLevel: JSON.parse(stationList[i].dataset.grades)
       });
 
-      graphThisSucker(callLetters, gradeLevels, stationList[i]);
+      graphGrades(callLetters, gradeLevels, stationList[i]);
     }
   }
 };
