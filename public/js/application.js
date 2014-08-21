@@ -49,10 +49,10 @@ var graphStations = function() {
 };
 
 
-$(function() {
+var addSorting = function() {
     $( "#sortable" ).sortable({
       axis: "x",
       containment: "parent"
     });
     $( "#sortable" ).disableSelection();
-  });
+  };

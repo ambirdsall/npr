@@ -9,6 +9,7 @@ var onClick = function(e) {
 		$('.container').empty();
 		$('.container').append(data);
 		graphStations();
+		addSorting();
 	});
 
 };
