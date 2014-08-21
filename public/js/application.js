@@ -50,10 +50,10 @@ var graphStations = function() {
 
 graphStations();
 
-// $(function() {
-//     $( "#sortable" ).sortable({
-//       axis: "x",
-//       containment: "parent"
-//     });
-//     $( "#sortable" ).disableSelection();
-//   });
+$(function() {
+    $( "#sortable" ).sortable({
+      axis: "x",
+      containment: "parent"
+    });
+    $( "#sortable" ).disableSelection();
+  });

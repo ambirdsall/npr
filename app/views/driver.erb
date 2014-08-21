@@ -1,9 +1,9 @@
 <div class="container">
   <h3>NPR Stations Around <%= "#{@user_city.city.capitalize}, #{@user_city.state.capitalize}" %>:</h3>
-  <div  class="chart-container">
+  <div id="sortable" class="chart-container">
     <% @user_city.stations.each do |s| %>
       <% if s.stories.length > 0 %>
-        <div class="chart center" data-name="<%= s.name %>" data-grades="<% gl = []; s.stories.each { |story|  gl <<story.grade_level } %><%= gl %>"></div>
+        <div class="chart" data-name="<%= s.name %>" data-grades="<% gl = []; s.stories.each { |story|  gl <<story.grade_level } %><%= gl %>"></div>
       <% end %>
     <% end %>
   </div>
