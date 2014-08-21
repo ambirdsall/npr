@@ -9,5 +9,5 @@ post '/city' do
     station.find_stories
   end
 
-  erb :driver
+  erb :graphs
 end
