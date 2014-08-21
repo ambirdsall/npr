@@ -3,9 +3,38 @@ body {
   text-align: center;
 }
 
-.chart {
+.title {
+  background-color: #00cccc;
+  height: 7em;
+  width: 100%;
+  display: table;
+}
+
+h1 {
+  display: table-cell;
+  vertical-align: middle;
+  font-size: 2.7em;
+}
+
+.city-finder {
+  margin-top: 2em;
+}
+
+.box {
   display: inline-block;
   background-color: #ffffff;
   border-radius: 10px;
+}
+
+.chart {
   margin: 0 10px 0;
 }
+
+.error {
+  padding: 0 3px 0;
+}
+.wrong {
+  color: #cc0000;
+}
+
+/*if I want teal: #00cccc*/
