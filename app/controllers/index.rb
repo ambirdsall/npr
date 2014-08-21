@@ -11,6 +11,7 @@ post '/city' do
     end
   erb :graphs, layout: false
   rescue
+    @error = "Try another city: we couldn't find that one."
     erb :error, layout: false
   end
 end
