@@ -17,4 +17,14 @@ class City
   def add_station(station)
     @stations << station
   end
+
+  def find_stories
+    stations.each do |station|
+      station.find_stories
+    end
+  end
+
+  def has_stories?
+    stations.any? {|s| s.stories.length > 0} ? true : false
+  end
 end
