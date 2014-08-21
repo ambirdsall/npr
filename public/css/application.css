@@ -4,13 +4,13 @@ body {
 }
 
 .title {
-  background-color: #00cccc;
+  background-color: #4682b4;
   height: 7em;
   width: 100%;
   display: table;
 }
 
-h1 {
+.app-name {
   display: table-cell;
   vertical-align: middle;
   font-size: 2.7em;
