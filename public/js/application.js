@@ -1,43 +1,58 @@
-var stationGrades = polyjs.data({
-  gradeLevel: [9.34130177514793,8.859733038348086,10.488697788697792,6.92278643476012,8.69156479731149,10.048655937364071,5.697836585365852,11.110889464594127,5.2882139194139235,9.611282506785098]
-//     term: ["Flower"], "Chocolate", "Candy", "Valentine"],
-//     count: [16600000, 9140000, 7480000, 5000000]
-});
-var chart_holder = document.getElementById("chart");
-
-var sfc = polyjs.chart({
-    layer: {
-        data: stationGrades,
-        type: "point",
-        y: "gradeLevel",
-        opacity: { const: 0.5 },
-        size: { const: 3 }
-    },
-
-    guide: {
-      x: {
-        title: "WFUK"
+var graphThisSucker = function(stationName, stationGrades, chartDiv) {
+  polyjs.chart({
+      layer: {
+          data: stationGrades,
+          type: "point",
+          y: "gradeLevel",
+          opacity: { const: 0.5 },
+          size: { const: 3 }
       },
-      y: {
-        title: "Grade Level",
-        min: 0,
-        max: 18
-      }
-    },
 
-    title: "oh SHIT it's a chart",
-    dom: chart_holder,
-    width: 120,
-    height: 350
-});
-// store station name and grade array as JSON in data attribute
+      guide: {
+        x: {
+          title: stationName
+        },
+        y: {
+          title: "Grade Level",
+          min: 0,
+          max: 20
+        }
+      },
 
-// modify below function to find station data divs
-// function ReplaceContentInContainer(selector, content) {
-//   var nodeList = document.querySelectorAll(selector);
-//   for (var i = 0, length = nodeList.length; i < length; i++) {
-//      nodeList[i].innerHTML = content;
-//   }
-// }
+      dom: chartDiv,
+      width: 120,
+      height: 350
+  });
+};
 
-// ReplaceContentInContainer(".theclass", "HELLO WORLD");
+var thereAreStoriesFor = function(station) {
+  if (JSON.parse(station.dataset.grades).length > 0) {
+    return station.dataset.grades.length
+  } else {
+    return false
+  }
+}
+
+var graphStations = function() {
+  var stationList = document.querySelectorAll(".chart");
+  for (var i = 0; i < stationList.length; i++) {
+    if (thereAreStoriesFor(stationList[i])) {
+      var callLetters = stationList[i].dataset.name;
+      var gradeLevels = polyjs.data({
+        gradeLevel: JSON.parse(stationList[i].dataset.grades)
+      });
+
+      graphThisSucker(callLetters, gradeLevels, stationList[i]);
+    }
+  }
+}
+
+graphStations();
+
+// $(function() {
+//     $( "#sortable" ).sortable({
+//       axis: "x",
+//       containment: "parent"
+//     });
+//     $( "#sortable" ).disableSelection();
+//   });
