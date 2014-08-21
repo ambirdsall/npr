@@ -28,11 +28,11 @@ var graphThisSucker = function(stationName, stationGrades, chartDiv) {
 
 var thereAreStoriesFor = function(station) {
   if (JSON.parse(station.dataset.grades).length > 0) {
-    return station.dataset.grades.length
+    return station.dataset.grades.length;
   } else {
-    return false
+    return false;
   }
-}
+};
 
 var graphStations = function() {
   var stationList = document.querySelectorAll(".chart");
@@ -46,9 +46,8 @@ var graphStations = function() {
       graphThisSucker(callLetters, gradeLevels, stationList[i]);
     }
   }
-}
+};
 
-graphStations();
 
 $(function() {
     $( "#sortable" ).sortable({
