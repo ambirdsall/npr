@@ -19,6 +19,7 @@ var graphThisSucker = function(stationName, stationGrades, chartDiv) {
         }
       },
 
+      zoom: false,
       dom: chartDiv,
       width: 120,
       height: 350
