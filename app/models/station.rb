@@ -1,5 +1,3 @@
-
-
 class Station
   attr_reader :name, :orgId, :stories
   def initialize(name, orgId)
