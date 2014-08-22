@@ -1,6 +1,20 @@
+@font-face {
+  font-family: "ostrich sans";
+  src: url('ostrich-sans-master/OstrichSans-Bold.otf');
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: "ostrich sans";
+  src: url('ostrich-sans-master/OstrichSans-Light.otf');
+  font-weight: lighter;
+}
+
 body {
-  background-color: #cdcdcd;
+  background-color: #7EA8CA;
   text-align: center;
+  font-family: "ostrich sans";
+  font-weight: lighter;
 }
 
 .title {
@@ -13,11 +27,44 @@ body {
 .app-name {
   display: table-cell;
   vertical-align: middle;
-  font-size: 2.7em;
+  font-size: 6em;
+  color: #ffffff;
+  font-family: "ostrich sans";
+  font-weight: lighter;
+}
+
+.bold {
+  font-family: "ostrich sans";
+  font-weight: bold;
+  font-size: 0.9em;
+  color: #E8E819;
 }
 
 .city-finder {
   margin-top: 2em;
+}
+
+.form-edge {
+  display: inline-block;
+  width: 15%;
+  border: 1px solid #ffffff;
+  border-radius: 8px;
+}
+
+.form-label {
+  margin-right: 10%;
+  color: #ffffff;
+}
+
+.typical {
+  border: none;
+  background-color: #d8e5ef;
+  border-radius: 3px;
+  margin: 4px 0;
+}
+
+.button {
+  display: none;
 }
 
 .box {
@@ -28,6 +75,10 @@ body {
 
 .chart {
   margin: 0 10px 0;
+}
+
+.chart-container {
+  margin-bottom: 3%;
 }
 
 .error {
