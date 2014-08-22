@@ -1,4 +1,4 @@
-  <h3>NPR Stations Around <%= "#{@user_city.city.capitalize}, #{@user_city.state.capitalize}" %>:</h3>
+  <h3>NPR Stations Around <%= "#{@user_city.city}, #{@user_city.state}" %>:</h3>
   <div id="sortable" class="chart-container">
     <% @user_city.stations.each do |s| %>
       <% if s.stories.length > 0 %>

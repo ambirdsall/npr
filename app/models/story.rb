@@ -3,8 +3,7 @@ class Story
 
   def initialize text
     @text = text
-    @grade_level = find_grade_level
-    @word_count = find_word_count
+    analyze_text
   end
 
   def find_grade_level
@@ -13,5 +12,11 @@ class Story
 
   def find_word_count
     Lingua::EN::Readability.new(@text).num_words
+  end
+
+  def analyze_text
+    report = Lingua::EN::Readability.new(@text)
+    @grade_level = report.kincaid
+    @word_count = report.num_words
   end
 end
