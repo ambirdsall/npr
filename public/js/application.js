@@ -32,7 +32,7 @@ var graphGrades = function(stationName, stationGrades, chartDiv) {
 
       zoom: false,
       dom: chartDiv,
-      width: 120,
+      width: 130,
       height: 350
   });
 };
