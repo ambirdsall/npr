@@ -11,7 +11,7 @@ post '/city' do
     if @user_city.has_stories?
       erb :graphs, layout: false
     else
-      @error = "This city's stations don't publish text stories. <br>Try again or turn on the radio."
+      @error = "#{@user_city.city}'s stations don't publish text stories. <br>Try again or turn on the radio."
       erb :error, layout: false
     end
   rescue
